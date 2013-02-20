@@ -4,15 +4,21 @@
 	<meta charset="utf-8">
 	<meta name="description" content="Responsive design testing for the masses">
 	<title>Responsive Design Testing</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
 	<style>
 		*{vertical-align:top;}
 		body{padding:20px;font-family:sans-serif;overflow-y:scroll;}
 		h2{margin:0 0 20px 0;}
+		hr {margin:20px 0px;clear:both; display: block;border: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff;}
 		span.small{font-size:60%;vertical-align:middle;}
+		#header {margin-top: 60px;}
+		#header h1 {color:#545454;}
 		#url{margin:0 0 20px 0px;display:block;}
-		#url input[type=text]{border:solid 1px #666;width:85%;margin:0 auto;font-size:2em;text-align:left;}
+		#url input[type=text]{border:solid 1px #666;width:85%;margin:0 auto;font-size:1em;text-align:left;}
 		#url input[type=submit]{display:none;}
-		#url #options{float:right;line-height:25px;width:13%;}
+		/* #url #options{float:right;line-height:25px;width:13%;} */
 		#url #options input{margin-top:5px;}
 		#frames{overflow-x:scroll;width:100%;margin-bottom:10px;padding-bottom:20px;}
 		.frame{margin-right:20px;float:left;}
@@ -25,17 +31,35 @@
 	</style>
 </head>
 <body id="container">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="/" class="brand">Vorwärts Werbung</a>
+				<p class="navbar-text">Responsive Web Design</p>
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<h1>Responsive Web Design</h1>
+		<p class="muted">Beispiel für eine responsive/adaptive Seite. Geben
+			Sie die gewünschte URL ein, um das Erscheinungsbild zu testen</p>
+	</div>
 	<div id="url">
 		<form method="post">
-			<input type="text" placeholder="Test your own site... type the url and hit enter" />
+			<div class="row">
+			<div class="span8">
+			<input type="text" class="input-xlarge" placeholder="Eigene seite testen... URL hier eingeben" />
 			<input type="submit" value="submit">
-			<div id="options">
+			</div>
+			<div id="options" class="span4">
 				<label for="normal"><input id="normal" type="radio" name="option" value="1" checked>Width only</label><br />
         <label for="accurate"><input id="accurate" type="radio" name="option" value="2">Device sizes</label><br />
 				<label for="scrollbar"><input id="scrollbar" type="checkbox" name="scrollbar" value="1" checked>Visible Scrollbars</label>
 			</div>
+			</div>
 		</form>
 	</div>
+	<hr>
 	<div id="frames" class="widthOnly">
 		<div id="inner">
 			<div id="f1" class="frame">
@@ -60,8 +84,11 @@
 			</div>
 		</div>
 	</div>
-	<span>A tool by <a href="http://mattkersley.com">Matt Kersley</a> - <a href="https://github.com/mattkersley/Responsive-Design-Testing">Fork it on Github</a></span><br />
-	<span>Note: The content width may not be pixel perfect - I have added 15px to the iframes to cater for the scrollbars</span>
+
+	<div class="container">
+		<span>A tool by <a href="http://mattkersley.com">Matt Kersley</a> - <a href="https://github.com/mattkersley/Responsive-Design-Testing">Fork it on Github</a></span><br />
+		<span>Note: The content width may not be pixel perfect - I have added 15px to the iframes to cater for the scrollbars</span>
+	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 	<script src="responsive.js"></script>
